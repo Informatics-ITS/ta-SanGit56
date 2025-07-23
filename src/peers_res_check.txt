@@ -1,0 +1,36 @@
+Cek sumber daya peer0...
+[cpu]
+CPU(s):                               1
+
+[memory]
+total        used        free      shared  buff/cache   available
+Mem:            1903         665         513           9         725        1079
+
+[disk]
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda3        20G   18G  806M  96% /
+
+Cek sumber daya peer1...
+[cpu]
+CPU(s):                               2
+
+[memory]
+total        used        free      shared  buff/cache   available
+Mem:            3916        1008        1047          12        1861        2668
+
+[disk]
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda3        49G   18G   28G  40% /
+
+Cek sumber daya peer2...
+[cpu]
+CPU(s):                               4
+
+[memory]
+total        used        free      shared  buff/cache   available
+Mem:            7941         955        5384          12        1602        6736
+
+[disk]
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda3        98G   17G   76G  19% /
+

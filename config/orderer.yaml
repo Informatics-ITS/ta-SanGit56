@@ -1,0 +1,83 @@
+General:
+    ListenAddress: 10.125.176.24
+    ListenPort: 7050
+    TLS:
+        Enabled: true
+        PrivateKey: ../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.key
+        Certificate: ../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt
+        RootCAs:
+          - ../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt
+        ClientAuthRequired: false
+        ClientRootCAs: ../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt
+    Keepalive:
+        ServerMinInterval: 60s
+        ServerInterval: 7200s
+        ServerTimeout: 20s
+    MaxRecvMsgSize: 104857600
+    MaxSendMsgSize: 104857600
+    Cluster:
+        SendBufferSize: 100
+        ClientCertificate: ../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt
+        ClientPrivateKey: ../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.key
+        ListenPort: 7051
+        ListenAddress: 0.0.0.0
+        ServerCertificate: ../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt
+        ServerPrivateKey: ../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.key
+    BootstrapMethod: none
+    LocalMSPDir: ../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp
+    LocalMSPID: OrdererMSP
+    Profile:
+        Enabled: false
+        Address: 0.0.0.0:6060
+    BCCSP:
+        Default: SW
+        SW:
+            Hash: SHA2
+            Security: 256
+            FileKeyStore:
+                KeyStore:
+        PKCS11:
+            Library:
+            Label:
+            Pin:
+            Hash:
+            Security:
+            FileKeyStore:
+                KeyStore:
+    Authentication:
+        TimeWindow: 15m
+ChannelParticipation:
+  Enabled: true
+  MaxRequestBodySize: 1 MB
+FileLedger:
+    Location: ./production/orderer
+Debug:
+    BroadcastTraceDir:
+    DeliverTraceDir:
+Operations:
+    ListenAddress: 127.0.0.1:8443
+    TLS:
+        Enabled: false
+        Certificate:
+        PrivateKey:
+        ClientAuthRequired: false
+        ClientRootCAs: []
+Metrics:
+    Provider: disabled
+    Statsd:
+      Network: udp
+      Address: 127.0.0.1:8125
+      WriteInterval: 30s
+      Prefix:
+Admin:
+    ListenAddress: 0.0.0.0:7053
+    TLS:
+        Enabled: true
+        Certificate: ../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt
+        PrivateKey: ../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.key
+        ClientAuthRequired: true
+        ClientRootCAs:
+            - ../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt
+Consensus:
+    WALDir: ./production/orderer/etcdraft/wal
+    SnapDir: ./production/orderer/etcdraft/snapshot

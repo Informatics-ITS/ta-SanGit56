@@ -1,0 +1,58 @@
+these are the hardware information of connected fabric peers:
+peer0...
+[cpu]
+CPU(s): 1
+
+[memory]
+        total   used   free shared  buff/cache  available
+Mem:    1903    665    513    8        725         1079
+
+[disk]
+Filesystem  Size  Used Avail Use% Mounted on
+/dev/sda3   20G   18G  806M  96%    /
+
+peer1...
+[cpu]
+CPU(s): 2
+
+[memory]
+        total   used   free shared  buff/cache  available
+Mem:    3916    1008    1047    12       1861        2668
+
+[disk]
+Filesystem  Size  Used Avail Use% Mounted on
+/dev/sda3   49G   18G   28G  40%    /
+
+peer2...
+[cpu]
+CPU(s): 4
+
+[memory]
+        total   used   free shared  buff/cache  available
+Mem:    7941    955   5384    12    1602        6736
+
+[disk]
+Filesystem  Size  Used Avail Use% Mounted on
+/dev/sda3   98G   17G   76G  19%    /
+
+with peers resources are defined. now lets define chaincode complexity:
+- low = can be run in peer0
+- medium = can be run in peer1 (if run in peer0 will max it out or almost)
+- high = can be run in peer2 (if run in peer1 will max it out or almost)
+
+define chaincode_name:
+- you will be given chaincode path
+- if you separate it with the "/" symbol, you will get 5 segments
+- chaincode_name is the 3rd segment
+
+define peer_number: peer_number can be peer0, peer1, or peer2 stated above with its hardware resources
+
+these are the rules when returning analysis result:
+1. all these files are present: go.mod, main.go, and <chaincode_name>.go
+2. must not use conversation sentences, formatting, styling, code blocks, etc
+3. only return plain answer and formatting
+
+follow these pattern when returning analysis result:
+<chaincode_name>-><peer_number>
+
+with all that being said, analyze chaincode complexity below. follow the rules and pattern
